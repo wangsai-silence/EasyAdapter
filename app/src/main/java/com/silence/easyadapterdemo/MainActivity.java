@@ -3,7 +3,7 @@ package com.silence.easyadapterdemo;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.silence.easyadapter.EasyAdapter;
+import com.silence.easyadapter.listview.LEasyAdapter;
 import com.silence.easyadapter.IDataType;
 import com.silence.easyadapter.utils.ViewFinder;
 import com.silence.easyadapterdemo.bean.DataType1;
@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_main);
-        new ViewFinder(this).listView(R.id.listview).setAdapter(new EasyAdapter(genData(),2));
+        new ViewFinder(this).listView(R.id.listview).setAdapter(new LEasyAdapter(genData(),2));
     }
 
     private List<IDataType> genData() {

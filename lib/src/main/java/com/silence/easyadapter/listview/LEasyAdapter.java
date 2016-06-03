@@ -1,16 +1,19 @@
-package com.silence.easyadapter;
+package com.silence.easyadapter.listview;
 
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.silence.easyadapter.IDataType;
+import com.silence.easyadapter.ViewHandlerFactory;
+
 import java.util.List;
 
 /**
  * Created by wangsai on 2016/4/19.
  */
-public class EasyAdapter<T extends IDataType> extends BaseAdapter {
+public class LEasyAdapter<T extends IDataType> extends BaseAdapter {
 
     /**
      * ListView的item类型数量
@@ -32,11 +35,11 @@ public class EasyAdapter<T extends IDataType> extends BaseAdapter {
      */
     private List<T> dataList;
 
-    public EasyAdapter(List<T> dataList) {
+    public LEasyAdapter(List<T> dataList) {
         this(dataList, 1);
     }
 
-    public EasyAdapter(List<T> dataList, int typeCount) {
+    public LEasyAdapter(List<T> dataList, int typeCount) {
         this.dataList = dataList;
         this.typeCount = typeCount;
         itemTypeArr = new SparseArray<>();
@@ -49,7 +52,7 @@ public class EasyAdapter<T extends IDataType> extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
-        IViewHandler handler = ViewHandlerFactory.getViewHandler(getItem(position).getViewHandlerName());
+        IListViewHandler handler = ViewHandlerFactory.getViewHandler(getItem(position).getViewHandlerName());
 
         Integer id = itemTypeArr.get(handler.getUniqueItemTypeId());
 
@@ -78,8 +81,8 @@ public class EasyAdapter<T extends IDataType> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        IViewHandler handler = ViewHandlerFactory.getViewHandler(getItem(position).getViewHandlerName());
-        ViewHolder holder = ViewHolder.get(parent.getContext(), convertView, parent, handler.getResId());
+        IListViewHandler handler = ViewHandlerFactory.getViewHandler(getItem(position).getViewHandlerName());
+        ListViewHolder holder = ListViewHolder.get(parent.getContext(), convertView, parent, handler.getResId());
 
         handler.handleView(holder, position, getItem(position), parent);
 

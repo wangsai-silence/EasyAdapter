@@ -1,21 +1,22 @@
-package com.silence.easyadapter;
+package com.silence.easyadapter.listview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.silence.easyadapter.R;
 import com.silence.easyadapter.utils.ViewFinder;
 
 /**
  * Created by wangsai on 2016/4/19.
  */
-public class ViewHolder {
+public class ListViewHolder {
     private ViewFinder viewFinder;
 
     private View mItemView;
 
-    private ViewHolder(Context context, ViewGroup parent, int layoutId) {
+    private ListViewHolder(Context context, ViewGroup parent, int layoutId) {
         LayoutInflater inflater = LayoutInflater.from(context);
         mItemView = inflater.inflate(layoutId, parent, false);
         viewFinder = new ViewFinder(mItemView);
@@ -31,10 +32,10 @@ public class ViewHolder {
         return viewFinder;
     }
 
-    public static ViewHolder get(Context context, View itemView, ViewGroup parent, int layoutId) {
+    public static ListViewHolder get(Context context, View itemView, ViewGroup parent, int layoutId) {
         if (itemView == null)
-            return new ViewHolder(context, parent, layoutId);
+            return new ListViewHolder(context, parent, layoutId);
         else
-            return (ViewHolder) itemView.getTag(R.id.item_holder);
+            return (ListViewHolder) itemView.getTag(R.id.item_holder);
     }
 }

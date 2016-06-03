@@ -14,6 +14,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".viewhandler.RecyclerViewActivity" />
+
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ public class ViewHandlerFactory {
      * @param viewHandlerClazz
      * @return
      */
-    public static IViewHandler getViewHandler(String viewHandlerClazz) {
+    public static <T extends IViewHandler> T getViewHandler(String viewHandlerClazz) {
         IViewHandler result = mHandlerMap.get(viewHandlerClazz);
 
         if (result == null) {
@@ -42,6 +42,6 @@ public class ViewHandlerFactory {
         if (result == null)
             throw new RuntimeException("IViewHandler创建失败:" + viewHandlerClazz);
 
-        return result;
+        return (T) result;
     }
 }

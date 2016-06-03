@@ -3,9 +3,9 @@ package com.silence.easyadapter;
 import android.view.ViewGroup;
 
 /**
- * Created by wangsai on 2016/4/20.
+ * Created by wangsai on 2016/6/3.
  */
-public interface IViewHandler<T> {
+public interface IViewHandler<H, T> {
     /**
      * 获取资源布局
      *
@@ -21,12 +21,12 @@ public interface IViewHandler<T> {
     int getUniqueItemTypeId();
 
     /**
-     *  对于条目显示的处理
+     * 对于条目显示的处理
      *
      * @param holder
      * @param positon
      * @param data
      * @param parent
      */
-    void handleView(ViewHolder holder, int positon, T data, ViewGroup parent);
+    void handleView(H holder, int positon, T data, ViewGroup parent);
 }
