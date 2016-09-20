@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 
 /**
- * 简化view的find和赋值操作操作
  * Created by wangsai on 2016/3/25.
  */
 public class ViewFinder {
@@ -63,7 +62,6 @@ public class ViewFinder {
     private final FindWrapper wrapper;
 
     /**
-     * 创建finder 包装给定view
      *
      * @param view
      */
@@ -73,7 +71,6 @@ public class ViewFinder {
     }
 
     /**
-     * 创建finder 包装给定window
      *
      * @param window
      */
@@ -83,8 +80,6 @@ public class ViewFinder {
     }
 
     /**
-     * 创建finder 包装给定activity
-     *
      * @param activity
      */
     public ViewFinder(Activity activity) {
@@ -96,10 +91,8 @@ public class ViewFinder {
     }
 
     /**
-     * 通过id查找view
-     *
      * @param id
-     * @return 找到的view
+     * @return
      */
     public <V extends View> V find(int id) {
         View v;
@@ -116,7 +109,6 @@ public class ViewFinder {
     }
 
     /**
-     * 通过id获取image
      *
      * @param id
      * @return image view
@@ -126,7 +118,6 @@ public class ViewFinder {
     }
 
     /**
-     * 通过id获取text view
      *
      * @param id
      * @return text view
@@ -141,7 +132,6 @@ public class ViewFinder {
     }
 
     /**
-     * 为对应id的child image view设置drawable
      *
      * @param id
      * @param drawable

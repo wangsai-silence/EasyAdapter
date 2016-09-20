@@ -1,28 +1,27 @@
 package com.silence.easyadapter.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseArray;
+import android.support.v4.util.ArrayMap;
 import android.view.ViewGroup;
 
 import com.silence.easyadapter.IDataType;
 import com.silence.easyadapter.ViewHandlerFactory;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by wangsai on 2016/6/3.
  */
 public class REasyAdapter<T extends IDataType> extends RecyclerView.Adapter<RecyclerViewHolder> {
-    /**
-     * 数据列表
-     */
+
     private List<T> dataList;
 
-    private SparseArray<Integer> resArray;
+    private Map<Integer, Integer> resArray;
 
     public REasyAdapter(List<T> dataList) {
         this.dataList = dataList;
-        resArray = new SparseArray<>();
+        resArray = new ArrayMap<>();
     }
 
     public T getItem(int position) {
@@ -33,9 +32,9 @@ public class REasyAdapter<T extends IDataType> extends RecyclerView.Adapter<Recy
     public int getItemViewType(int position) {
         IRecyclerViewHandler handler = ViewHandlerFactory.getViewHandler(getItem(position).getViewHandlerName());
 
-        resArray.put(handler.getUniqueItemTypeId(), handler.getResId());
+        resArray.put(handler.getClass().hashCode(), handler.getResId());
 
-        return handler.getUniqueItemTypeId();
+        return handler.getClass().hashCode();
     }
 
     @Override

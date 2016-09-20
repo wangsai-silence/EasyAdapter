@@ -13,12 +13,11 @@ import java.util.Map;
 public class ViewHandlerFactory {
     private static final String TAG = ViewHandlerFactory.class.getSimpleName();
     /**
-     * 缓存已存在的handler
+     * cached handler
      */
     private static Map<String, IViewHandler> mHandlerMap = new ArrayMap<>();
 
     /**
-     * 通过类名动态加载创建、加载对应的类对象
      *
      * @param viewHandlerClazz
      * @return
@@ -30,7 +29,7 @@ public class ViewHandlerFactory {
             try {
                 Class clazz = Class.forName(viewHandlerClazz);
 
-                Assert.judge(IViewHandler.class.isAssignableFrom(clazz), "处理类必须实现IViewHandler接口");
+                Assert.judge(IViewHandler.class.isAssignableFrom(clazz), "IViewHandler not implemented");
 
                 result = (IViewHandler) clazz.newInstance();
                 mHandlerMap.put(viewHandlerClazz, result);
@@ -40,7 +39,7 @@ public class ViewHandlerFactory {
         }
 
         if (result == null)
-            throw new RuntimeException("IViewHandler创建失败:" + viewHandlerClazz);
+            throw new RuntimeException("IViewHandler create failed:" + viewHandlerClazz);
 
         return (T) result;
     }

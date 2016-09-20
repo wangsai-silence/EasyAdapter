@@ -5,8 +5,6 @@ package com.silence.easyadapter;
  */
 public interface IDataType {
     /**
-     * 对于数据类型的条目处理类
-     *
      * @return
      */
     String getViewHandlerName();

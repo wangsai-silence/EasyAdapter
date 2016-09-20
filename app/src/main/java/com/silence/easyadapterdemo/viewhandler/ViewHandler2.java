@@ -17,11 +17,6 @@ public class ViewHandler2 implements IListViewHandler<DataType2> {
     }
 
     @Override
-    public int getUniqueItemTypeId() {
-        return R.layout.item_main2;
-    }
-
-    @Override
     public void handleView(ListViewHolder holder, int positon, DataType2 data, ViewGroup parent) {
         holder.getViewFinder().textView(R.id.value2).setText(data.getValue());
     }

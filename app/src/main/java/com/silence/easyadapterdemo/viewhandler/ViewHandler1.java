@@ -19,11 +19,6 @@ public class ViewHandler1 implements IListViewHandler<DataType1>, View.OnClickLi
     }
 
     @Override
-    public int getUniqueItemTypeId() {
-        return R.layout.item_main1;
-    }
-
-    @Override
     public void handleView(ListViewHolder holder, int positon, DataType1 data, ViewGroup parent) {
         holder.getViewFinder().textView(R.id.value).setText(data.getValue());
 

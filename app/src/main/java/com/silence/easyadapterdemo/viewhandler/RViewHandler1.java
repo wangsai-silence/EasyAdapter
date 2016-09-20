@@ -17,11 +17,6 @@ public class RViewHandler1 implements IRecyclerViewHandler<RDataType1> {
     }
 
     @Override
-    public int getUniqueItemTypeId() {
-        return R.layout.item_main1;
-    }
-
-    @Override
     public void handleView(RecyclerViewHolder holder, int positon, RDataType1 data, ViewGroup parent) {
         holder.getViewFinder().textView(R.id.value).setText(data.getValue());
     }

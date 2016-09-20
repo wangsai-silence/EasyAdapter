@@ -3,18 +3,16 @@ package com.silence.easyadapter.utils;
 import android.support.graphics.drawable.BuildConfig;
 
 /**
- * 只在Debug状态起效
- * 断言工具类
+ * Only enable when debug
+ *
  * Created by wangsai on 2016/4/12.
  */
 public class Assert {
 
-    private static final String MESSAGE_FORMAT = "\"%s\" 参数不能为空.";
+    private static final String MESSAGE_FORMAT = "\"%s\" params empty.";
 
     /**
-     * notNull:判断对象是否为空. <br/>
-     * <p>
-     * 空则抛出NullPointerException异常
+     * judge whether Object is empty, if true throw NullPointerException
      * </p>
      *
      * @param object
