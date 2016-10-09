@@ -7,6 +7,7 @@
   2. 对于每一种类型的数据需要一个`IViewHandler`的实现类，用于处理每种类型的数据，所有的View操作和数据的展示都从Adapter中脱离出来，放到`IViewHandler`中处理；
   3. 在`IDataType`中将对应的`ViewHandler`实现类的类名返回，用于后期的反射查找对应类；
   4. 在`IViewHandler`中将对应的资源ID返回；
+  5. 在gradle中添加引用 compile 'com.silence.easyadapter:lib:1.0.0'
   
 ### 示例代码
   ```

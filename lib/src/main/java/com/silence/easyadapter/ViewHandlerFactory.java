@@ -20,7 +20,6 @@ public class ViewHandlerFactory {
     /**
      *
      * @param viewHandlerClazz
-     * @return
      */
     public static <T extends IViewHandler> T getViewHandler(String viewHandlerClazz) {
         IViewHandler result = mHandlerMap.get(viewHandlerClazz);

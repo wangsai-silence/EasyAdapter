@@ -90,10 +90,6 @@ public class ViewFinder {
         mViews = new SparseArray<>();
     }
 
-    /**
-     * @param id
-     * @return
-     */
     public <V extends View> V find(int id) {
         View v;
 

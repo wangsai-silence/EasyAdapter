@@ -13,10 +13,6 @@ public class Assert {
 
     /**
      * judge whether Object is empty, if true throw NullPointerException
-     * </p>
-     *
-     * @param object
-     * @param argName
      */
     public static void checkNotNull(Object object, String argName) {
         if (object == null && BuildConfig.DEBUG) {
