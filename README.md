@@ -2,7 +2,7 @@
 简化更改ListView RecyclerView的展示模式，削弱Adapter的逻辑处理和View展示功能，极大的简化ListView加载数据的方式.
 
 ###更新说明
-支持ViewPager。 使用VEasyAdapter来处理ViewPager相关数据，对外保证了使用的统一性。 个人比较懒，只更新库代码了，木有更新示例和gradle版本
+支持ViewPager。 使用VEasyAdapter来处理ViewPager相关数据，对外保证了使用的统一性。
 
 ### 使用说明
   1. 所有的数据实现`IDataType`接口；     
@@ -10,7 +10,7 @@
   3. 在`IDataType`中将对应的`ViewHandler`实现类的类名返回，用于后期的反射查找对应类；
   4. 在`IViewHandler`中将对应的资源ID返回；
   5. Adapter对应关系：ListView -> LEasyAdapter RecyclerView -> REasyAdapter ViewPager -> VEasyAdapter 
-  5. 在gradle中添加引用 compile 'com.silence.easyadapter:lib:1.0.0'
+  5. 在gradle中添加引用 compile 'com.silence.easyadapter:lib:2.0.0'
   
 ### 示例代码
   ```
