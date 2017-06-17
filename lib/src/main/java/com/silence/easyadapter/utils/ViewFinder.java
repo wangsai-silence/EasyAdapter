@@ -2,6 +2,7 @@ package com.silence.easyadapter.utils;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.support.v4.view.ViewPager;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +24,7 @@ public class ViewFinder {
         View findViewById(int id);
 
         Resources getResources();
+
     }
 
     private static class WindowWrapper implements FindWrapper {
@@ -40,6 +42,7 @@ public class ViewFinder {
         public Resources getResources() {
             return window.getContext().getResources();
         }
+
     }
 
     private static class ViewWrapper implements FindWrapper {
@@ -57,12 +60,12 @@ public class ViewFinder {
         public Resources getResources() {
             return view.getResources();
         }
+
     }
 
     private final FindWrapper wrapper;
 
     /**
-     *
      * @param view
      */
     public ViewFinder(View view) {
@@ -71,7 +74,6 @@ public class ViewFinder {
     }
 
     /**
-     *
      * @param window
      */
     public ViewFinder(Window window) {
@@ -105,7 +107,6 @@ public class ViewFinder {
     }
 
     /**
-     *
      * @param id
      * @return image view
      */
@@ -114,7 +115,6 @@ public class ViewFinder {
     }
 
     /**
-     *
      * @param id
      * @return text view
      */
@@ -122,13 +122,16 @@ public class ViewFinder {
         return find(id);
     }
 
-
     public ListView listView(final int id) {
         return find(id);
     }
 
+
+    public ViewPager viewPager(int id) {
+        return find(id);
+    }
+
     /**
-     *
      * @param id
      * @param drawable
      * @return image view

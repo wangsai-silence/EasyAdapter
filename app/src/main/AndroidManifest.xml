@@ -14,8 +14,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".viewhandler.RecyclerViewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
 
+        <activity android:name=".ViewPagerActivity"/>
     </application>
 
 </manifest>

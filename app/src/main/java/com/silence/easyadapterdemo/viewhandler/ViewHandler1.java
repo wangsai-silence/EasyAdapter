@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import com.silence.easyadapter.listview.IListViewHandler;
 import com.silence.easyadapter.listview.ListViewHolder;
 import com.silence.easyadapterdemo.R;
+import com.silence.easyadapterdemo.RecyclerViewActivity;
 import com.silence.easyadapterdemo.bean.DataType1;
 
 /**
@@ -19,7 +20,7 @@ public class ViewHandler1 implements IListViewHandler<DataType1>, View.OnClickLi
     }
 
     @Override
-    public void handleView(ListViewHolder holder, int positon, DataType1 data, ViewGroup parent) {
+    public void handleView(ListViewHolder holder, int position, DataType1 data, ViewGroup parent) {
         holder.getViewFinder().textView(R.id.value).setText(data.getValue());
 
         holder.getItemView().setOnClickListener(this);

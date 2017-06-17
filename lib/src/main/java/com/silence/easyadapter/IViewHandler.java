@@ -15,9 +15,9 @@ public interface IViewHandler<H, T> {
     /**
      *
      * @param holder
-     * @param positon
+     * @param position
      * @param data
      * @param parent
      */
-    void handleView(H holder, int positon, T data, ViewGroup parent);
+    void handleView(H holder, int position, T data, ViewGroup parent);
 }

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 version = "1.0.0"
@@ -7,14 +7,14 @@ version = "1.0.0"
 android {
 
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "25.0.1"
 
     lintOptions {
         abortOnError false
     }
 
     defaultConfig {
-        minSdkVersion 7
+        minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
         versionName version
@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
 }
@@ -38,53 +38,45 @@ dependencies {
 def siteUrl = 'https://github.com/wangsai-silence/EasyAdapter'   // 项目的主页
 def gitUrl = 'https://github.com/wangsai-silence/EasyAdapter.git'   // Git仓库的url
 group = "com.silence.easyadapter"            // Maven Group ID for the artifact，一般填你唯一的包名
-//install {
-//    repositories.mavenInstaller {
-//        // This generates POM.xml with proper parameters
-//        pom {
-//            project {
-//                packaging 'aar'
-//                // Add your description here
-//                name '简化更改ListView/RecyclerView的展示模式，削弱Adapter的逻辑处理和View展示功能，极大的简化ListView/RecyclerView加载数据的方式'
-////项目描述，没什么用
-//                url siteUrl
-//                // Set your license
-//                licenses {
-//                    license {
-//                        name 'The Apache Software License, Version 2.0'
-//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//                    }
-//                }
-//                developers {
-//                    developer {
-//                        id 'wangsai'        //填写的一些基本信息
-//                        name 'wangsai'
-//                        email 'wangsai.silence@gmail.com'
-//                    }
-//                }
-//                scm {
-//                    connection gitUrl
-//                    developerConnection gitUrl
-//                    url siteUrl
-//
-//                }
-//
-//            }
-//        }
-//    }
-//}
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // Add your description here
+                name '简化ListView/RecyclerView/ViewPager相关Adapter的使用方式'
+//项目描述，没什么用
+                url siteUrl
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'wangsai'        //填写的一些基本信息
+                        name 'wangsai'
+                        email 'wangsai.silence@gmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+
+            }
+        }
+    }
+}
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
 artifacts {
 //    archives javadocJar
     archives sourcesJar

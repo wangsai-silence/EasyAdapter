@@ -1,11 +1,12 @@
-package com.huobi.baselib.adapter.viewpager;
-
+package com.silence.easyadapter.viewpager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.huobi.baselib.utils.ViewFinder;
+import com.silence.easyadapter.R;
+import com.silence.easyadapter.utils.ViewFinder;
+
 
 /**
  * Created by wangsai on 2017/6/17.
@@ -21,7 +22,7 @@ public class ViewPagerHolder {
         mItemView = inflater.inflate(layoutId, parent, false);
         viewFinder = new ViewFinder(mItemView);
 
-        mItemView.setTag(com.huobi.baselib.R.id.item_holder, this);
+        mItemView.setTag(R.id.item_holder, this);
     }
 
     public View getItemView() {
@@ -36,6 +37,6 @@ public class ViewPagerHolder {
         if (itemView == null)
             return new ViewPagerHolder(context, parent, layoutId);
         else
-            return (ViewPagerHolder) itemView.getTag(com.huobi.baselib.R.id.item_holder);
+            return (ViewPagerHolder) itemView.getTag(R.id.item_holder);
     }
 }

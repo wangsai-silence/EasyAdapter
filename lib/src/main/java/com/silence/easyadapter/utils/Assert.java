@@ -1,6 +1,7 @@
 package com.silence.easyadapter.utils;
 
-import android.support.graphics.drawable.BuildConfig;
+
+import com.silence.easyadapter.BuildConfig;
 
 /**
  * Only enable when debug

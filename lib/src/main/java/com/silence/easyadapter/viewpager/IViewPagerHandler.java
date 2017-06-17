@@ -1,6 +1,6 @@
-package com.huobi.baselib.adapter.viewpager;
+package com.silence.easyadapter.viewpager;
 
-import com.huobi.baselib.adapter.IViewHandler;
+import com.silence.easyadapter.IViewHandler;
 
 /**
  * Created by wangsai on 2017/6/17.

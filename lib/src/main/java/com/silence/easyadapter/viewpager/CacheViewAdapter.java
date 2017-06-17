@@ -1,11 +1,12 @@
-package com.huobi.baselib.adapter.viewpager;
+package com.silence.easyadapter.viewpager;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.huobi.baselib.R;
-import com.huobi.baselib.adapter.IDataType;
+
+import com.silence.easyadapter.IDataType;
+import com.silence.easyadapter.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

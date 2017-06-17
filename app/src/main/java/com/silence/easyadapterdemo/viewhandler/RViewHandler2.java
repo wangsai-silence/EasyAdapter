@@ -17,7 +17,7 @@ public class RViewHandler2 implements IRecyclerViewHandler<RDataType2> {
     }
 
     @Override
-    public void handleView(RecyclerViewHolder holder, int positon, RDataType2 data, ViewGroup parent) {
+    public void handleView(RecyclerViewHolder holder, int position, RDataType2 data, ViewGroup parent) {
         holder.getViewFinder().textView(R.id.value2).setText(data.getValue());
     }
 }
