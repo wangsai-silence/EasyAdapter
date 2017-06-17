@@ -1,12 +1,15 @@
 # EasyAdapter
-简化更改ListView的展示模式，削弱Adapter的逻辑处理和View展示功能，极大的简化ListView加载数据的方式.
+简化更改ListView RecyclerView的展示模式，削弱Adapter的逻辑处理和View展示功能，极大的简化ListView加载数据的方式.
+
+###更新说明
+支持ViewPager。 使用VEasyAdapter来处理ViewPager相关数据，对外保证了使用的统一性。 个人比较懒，只更新库代码了，木有更新示例和gradle版本
 
 ### 使用说明
-  1. 所有的数据实现`IDataType`接口； 
-    
+  1. 所有的数据实现`IDataType`接口；     
   2. 对于每一种类型的数据需要一个`IViewHandler`的实现类，用于处理每种类型的数据，所有的View操作和数据的展示都从Adapter中脱离出来，放到`IViewHandler`中处理；
   3. 在`IDataType`中将对应的`ViewHandler`实现类的类名返回，用于后期的反射查找对应类；
   4. 在`IViewHandler`中将对应的资源ID返回；
+  5. Adapter对应关系：ListView -> LEasyAdapter RecyclerView -> REasyAdapter ViewPager -> VEasyAdapter 
   5. 在gradle中添加引用 compile 'com.silence.easyadapter:lib:1.0.0'
   
 ### 示例代码

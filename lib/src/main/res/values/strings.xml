@@ -2,4 +2,5 @@
     <string name="app_name">EasyAdapter</string>
     <item name="item_holder" type="id" />
     <item name="item_data" type="id" />
+    <item name="item_viewtype" type="id" />
 </resources>
